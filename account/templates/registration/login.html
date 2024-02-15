@@ -1,0 +1,22 @@
+{% extends 'webapp/base.html' %}
+{% block title %}login {% endblock %}
+{% block content %}
+<!-- Login -->
+<div class="container" style="margin: auto; width: 100%; display: flex; align-items: center; justify-content: center;">
+    <!-- The login application Logic -->
+    <div class="login-form" style="margin: auto;">
+        <h2 style="text-align: center; width: 100%; font-style: normal; font-family: 'Courier New', Courier, monospace; font-weight: 400; font-size: 32px; color: blue;">Hakika Soko</h2>
+        {% if form.errors %}
+        <p>Your username or password didn't match please try again.</p>
+        {% endif %}
+        <form method="post" action="{% url 'auth:login' %}" style="font-size: 32px;">
+            {% csrf_token %}
+            {{ form.as_div }}
+            <input id="submit" type="submit" value="login" style="border: 0.1em green solid; background-color: green; padding: 0.5em; font-size: 20px; margin-top: 1em;">
+            <input type="hidden" value="{{ next }}">
+        </form>
+        <p>You don't remember your password ?<a href="{% url 'auth:password_reset' %}">Forgot password ?</a></p>
+        <p>If you don't have an account you can create one it's quick and super easy<a href="{% url 'auth:signup' %}" style="border: 0.1em green solid; background-color: green; padding: 0.5em; font-size: 20px; margin-top: 1em;">signup</a></p>
+    </div>
+</div>
+{% endblock %}

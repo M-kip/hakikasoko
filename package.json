@@ -1,0 +1,34 @@
+{
+  "name": "tradingwebsite",
+  "version": "1.0.0",
+  "description": "Webapp for e-commerce website",
+  "main": "index.js",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "author": "moses kiprono",
+  "license": "ISC",
+  "dependencies": {
+    "@chakra-ui/icons": "^2.1.1",
+    "@chakra-ui/react": "^2.8.2",
+    "@emotion/react": "^11.11.1",
+    "@emotion/styled": "^11.11.0",
+    "@tanstack/react-query": "^5.15.0",
+    "@tanstack/react-router": "^1.0.0",
+    "@vitejs/plugin-react": "^4.1.1",
+    "framer-motion": "^10.16.4",
+    "gsap": "^3.12.2",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-icons": "^4.12.0",
+    "react-router-dom": "^6.21.1",
+    "vite": "^4.5.0"
+  },
+  "devDependencies": {
+    "@openapi-codegen/cli": "^2.0.0",
+    "@openapi-codegen/typescript": "^8.0.0",
+    "@tanstack/eslint-plugin-query": "^5.14.6"
+  }
+}

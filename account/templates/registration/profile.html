@@ -1,0 +1,161 @@
+{% extends 'webapp/base.html' %}
+{% load static %}
+{% block title %}Profile{% endblock %}
+{% block content %}
+<div class="profile-section">
+    {% if profile.userImage.url and profile.coverImage.url %}
+    <!-- cover photo-->
+    <div style="width: 100%; height: 250px;">
+        <img style="object-fit: cover;" src={{ profile.userImage.url }} width="100%" height="100%" alt="coverphoto">
+    </div>
+    <!-- profile pic-->
+    <div style="border-radius: 50%; display: flex;"">
+        <img style="width: 220px; border-radius: 50%; height: 200px; margin-top: -100px;"  src={{ profile.coverImage.url }} alt="profilepic">
+        <div style="display: flex; align-items: center;">
+            <p style="padding: 0.5em; font-size: 20px; text-transform: uppercase;">{{ request.user.username }}</p>
+            <a style="background-color: green; padding: 1em; text-transform: uppercase; cursor: pointer;" href="{% url 'auth:profileEdit' request.user.profile.pk %}">edit</a>
+        </div>
+    </div>
+    <section class="personal-information" >
+        <h2>Personal information</h2>
+        <table>
+            <tr>
+                <th>First name</th>
+                <td>{{ profile.user.first_name }}</td>
+            </tr>
+            <tr>
+                <th>Last name</th>
+                <td>{{ profile.user.last_name }}</td>
+            </tr>
+            <tr>
+                <th>Email</th>
+                <td>{{ profile.user.email }}</td>
+            </tr>
+            <tr>
+                <th>Phone Number</th>
+                <td>{{ profile.phoneNumber }}</td>
+            </tr>
+            <tr>
+                <th>Address</th>
+                <td>{{ profile.address }}</td>
+            </tr>
+            <tr>
+                <th>D.O.B</th>
+                <td>{{ profile.date_of_birth }}</td>
+            </tr>
+            <tr>
+                <th>Role</th>
+                <td>{{ profile.role }}</td>
+            </tr>
+        </table>
+    </section>
+    {% else %}
+        <p>You haven't completed your onboarding session please fill in your profile information.<br>
+            Via this link <button>edit profile</button>
+        </p>
+    {% endif %}
+</div>
+{%if request.user.profile.role == "SUPPLIER" %}
+<section class="addProducts">
+    <h2 class="heading">Add Products to your catalog <button onclick="addProduct()">add</button></h2>
+    <div id="addProductContainer">
+        <form action="." method="post" enctype="multipart/form-data" style="font-size: 32px;">
+            <h5 >You can now add products to your catalog</h5>
+            {{ addProductForm.as_div }}
+            <input type="submit" value="submit" id="submitButton">
+        </form>
+    </div>
+</section>
+<section class="ProductsList">
+    <h3>Your Products Catalog:</h3>
+    <div class="productsListContainer">
+        {% for product in Products %}
+        <div class="card">
+            <div class="image-container">
+                <img src={{ product.productImage.url }} alt="product image" width="100%" height="100%">
+            </div>
+            <div>
+                <p>{{ product.name }}</p>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</section>
+{% endif %}
+{% endblock %}
+{% block addScript %}
+<script>
+    function addProduct(e)
+    {   
+        let el = document.getElementById('addProductContainer')
+        if (el.style.display == 'none'){
+            el.style.display = 'block'
+        }else{
+        el.style.display = 'none'
+        }
+    }
+</script>
+{% endblock %}
+{% block css %}
+<style>
+    .productsListContainer {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .productsListContainer .card {
+        height: max-content;
+        width: max-content;
+        margin-left: 0.2em;
+        margin-right: 0.2em;
+    }
+    .productsListContainer .card .image-container {
+        max-width: 200px;
+        max-height: 200px;
+    }
+    @media screen and (max-width: 600px) {
+        .productsListContainer .card .image-container {
+            max-width: 100px;
+            max-height: 100px;
+        }
+    }
+    .addProducts {
+        width: 100%;
+        font-family: 'Times New Roman', Times, serif;
+        margin-bottom: 0.2em;
+        padding-left: 1em;
+        margin-top: 0.2em;
+        background-color: rgb(146, 157, 167);
+    }
+    .addProducts .heading {
+        padding: 0.2em;
+        width: 100%;
+        text-transform: uppercase;
+    }
+    .heading button {
+        text-decoration: line-through;
+        text-transform: capitalize;
+        padding: 0.2em;
+        background-color: green;
+        border-radius: 0.2em;
+        border: 0.1em green solid;
+        font-size: 24px;
+    }
+    .heading button:hover {
+        background-color: blue;
+        transition-duration: 0.1ms;
+        cursor: pointer;
+    }
+    #submitButton {
+        background-color: green;
+        padding: 0.2em;
+        border: 0.2em green solid;
+        font-size: 28px;
+    }
+    #addProductContainer {
+        width: 100%;
+        display: none;
+        margin-left: auto;
+        margin-right: auto;
+    }
+</style>
+{% endblock %}

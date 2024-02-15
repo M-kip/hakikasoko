@@ -1,0 +1,1272 @@
+openapi: 3.0.3
+info:
+  title: ''
+  version: 0.0.0
+paths:
+  /api/categories/:
+    get:
+      operationId: api_categories_list
+      description: |-
+        This class maps the underlying database table, it
+        allow the user the update, retive and destory Category objects.
+      tags:
+      - api
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Category'
+          description: ''
+    post:
+      operationId: api_categories_create
+      description: |-
+        This class maps the underlying database table, it
+        allow the user the update, retive and destory Category objects.
+      tags:
+      - api
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Category'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Category'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Category'
+        required: true
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Category'
+          description: ''
+  /api/categories/{id}/:
+    get:
+      operationId: api_categories_retrieve
+      description: |-
+        This class maps the underlying database table, it
+        allow the user the update, retive and destory Category objects.
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: A unique integer value identifying this category.
+        required: true
+      tags:
+      - api
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Category'
+          description: ''
+    put:
+      operationId: api_categories_update
+      description: |-
+        This class maps the underlying database table, it
+        allow the user the update, retive and destory Category objects.
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: A unique integer value identifying this category.
+        required: true
+      tags:
+      - api
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Category'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Category'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Category'
+        required: true
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Category'
+          description: ''
+    patch:
+      operationId: api_categories_partial_update
+      description: |-
+        This class maps the underlying database table, it
+        allow the user the update, retive and destory Category objects.
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: A unique integer value identifying this category.
+        required: true
+      tags:
+      - api
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PatchedCategory'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/PatchedCategory'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/PatchedCategory'
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Category'
+          description: ''
+    delete:
+      operationId: api_categories_destroy
+      description: |-
+        This class maps the underlying database table, it
+        allow the user the update, retive and destory Category objects.
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: A unique integer value identifying this category.
+        required: true
+      tags:
+      - api
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '204':
+          description: No response body
+  /api/prices/:
+    get:
+      operationId: api_prices_list
+      description: |-
+        This class describes the Retailer db table it offers
+        an interface that allows us to perform retrive, update, and destory actions.
+      tags:
+      - api
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Price'
+          description: ''
+    post:
+      operationId: api_prices_create
+      description: |-
+        This class describes the Retailer db table it offers
+        an interface that allows us to perform retrive, update, and destory actions.
+      tags:
+      - api
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Price'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Price'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Price'
+        required: true
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Price'
+          description: ''
+  /api/prices/{id}/:
+    get:
+      operationId: api_prices_retrieve
+      description: |-
+        This class describes the Retailer db table it offers
+        an interface that allows us to perform retrive, update, and destory actions.
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: A unique integer value identifying this price.
+        required: true
+      tags:
+      - api
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Price'
+          description: ''
+    put:
+      operationId: api_prices_update
+      description: |-
+        This class describes the Retailer db table it offers
+        an interface that allows us to perform retrive, update, and destory actions.
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: A unique integer value identifying this price.
+        required: true
+      tags:
+      - api
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Price'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Price'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Price'
+        required: true
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Price'
+          description: ''
+    patch:
+      operationId: api_prices_partial_update
+      description: |-
+        This class describes the Retailer db table it offers
+        an interface that allows us to perform retrive, update, and destory actions.
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: A unique integer value identifying this price.
+        required: true
+      tags:
+      - api
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PatchedPrice'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/PatchedPrice'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/PatchedPrice'
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Price'
+          description: ''
+    delete:
+      operationId: api_prices_destroy
+      description: |-
+        This class describes the Retailer db table it offers
+        an interface that allows us to perform retrive, update, and destory actions.
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: A unique integer value identifying this price.
+        required: true
+      tags:
+      - api
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '204':
+          description: No response body
+  /api/products/:
+    get:
+      operationId: api_products_list
+      description: A view set for viewing and editing product
+      tags:
+      - api
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Product'
+          description: ''
+    post:
+      operationId: api_products_create
+      description: A view set for viewing and editing product
+      tags:
+      - api
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Product'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Product'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Product'
+        required: true
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Product'
+          description: ''
+  /api/products/{id}/:
+    get:
+      operationId: api_products_retrieve
+      description: A view set for viewing and editing product
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: A unique integer value identifying this product.
+        required: true
+      tags:
+      - api
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Product'
+          description: ''
+    put:
+      operationId: api_products_update
+      description: A view set for viewing and editing product
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: A unique integer value identifying this product.
+        required: true
+      tags:
+      - api
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Product'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Product'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Product'
+        required: true
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Product'
+          description: ''
+    patch:
+      operationId: api_products_partial_update
+      description: A view set for viewing and editing product
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: A unique integer value identifying this product.
+        required: true
+      tags:
+      - api
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PatchedProduct'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/PatchedProduct'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/PatchedProduct'
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Product'
+          description: ''
+    delete:
+      operationId: api_products_destroy
+      description: A view set for viewing and editing product
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: A unique integer value identifying this product.
+        required: true
+      tags:
+      - api
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '204':
+          description: No response body
+  /api/profiles/:
+    get:
+      operationId: api_profiles_list
+      description: |-
+        This class details the Account model that directly maps to the users
+            profile
+        Args:
+            viewsets (_type_): _description_
+      tags:
+      - api
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Profile'
+          description: ''
+    post:
+      operationId: api_profiles_create
+      description: |-
+        This class details the Account model that directly maps to the users
+            profile
+        Args:
+            viewsets (_type_): _description_
+      tags:
+      - api
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Profile'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Profile'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Profile'
+        required: true
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Profile'
+          description: ''
+  /api/profiles/{id}/:
+    get:
+      operationId: api_profiles_retrieve
+      description: |-
+        This class details the Account model that directly maps to the users
+            profile
+        Args:
+            viewsets (_type_): _description_
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: A unique integer value identifying this profile.
+        required: true
+      tags:
+      - api
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Profile'
+          description: ''
+    put:
+      operationId: api_profiles_update
+      description: |-
+        This class details the Account model that directly maps to the users
+            profile
+        Args:
+            viewsets (_type_): _description_
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: A unique integer value identifying this profile.
+        required: true
+      tags:
+      - api
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Profile'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Profile'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Profile'
+        required: true
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Profile'
+          description: ''
+    patch:
+      operationId: api_profiles_partial_update
+      description: |-
+        This class details the Account model that directly maps to the users
+            profile
+        Args:
+            viewsets (_type_): _description_
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: A unique integer value identifying this profile.
+        required: true
+      tags:
+      - api
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PatchedProfile'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/PatchedProfile'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/PatchedProfile'
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Profile'
+          description: ''
+    delete:
+      operationId: api_profiles_destroy
+      description: |-
+        This class details the Account model that directly maps to the users
+            profile
+        Args:
+            viewsets (_type_): _description_
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: A unique integer value identifying this profile.
+        required: true
+      tags:
+      - api
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '204':
+          description: No response body
+  /api/schema/:
+    get:
+      operationId: api_schema_retrieve
+      description: |-
+        OpenApi3 schema for this API. Format can be selected via content negotiation.
+
+        - YAML: application/vnd.oai.openapi
+        - JSON: application/vnd.oai.openapi+json
+      parameters:
+      - in: query
+        name: format
+        schema:
+          type: string
+          enum:
+          - json
+          - yaml
+      - in: query
+        name: lang
+        schema:
+          type: string
+          enum:
+          - af
+          - ar
+          - ar-dz
+          - ast
+          - az
+          - be
+          - bg
+          - bn
+          - br
+          - bs
+          - ca
+          - ckb
+          - cs
+          - cy
+          - da
+          - de
+          - dsb
+          - el
+          - en
+          - en-au
+          - en-gb
+          - eo
+          - es
+          - es-ar
+          - es-co
+          - es-mx
+          - es-ni
+          - es-ve
+          - et
+          - eu
+          - fa
+          - fi
+          - fr
+          - fy
+          - ga
+          - gd
+          - gl
+          - he
+          - hi
+          - hr
+          - hsb
+          - hu
+          - hy
+          - ia
+          - id
+          - ig
+          - io
+          - is
+          - it
+          - ja
+          - ka
+          - kab
+          - kk
+          - km
+          - kn
+          - ko
+          - ky
+          - lb
+          - lt
+          - lv
+          - mk
+          - ml
+          - mn
+          - mr
+          - ms
+          - my
+          - nb
+          - ne
+          - nl
+          - nn
+          - os
+          - pa
+          - pl
+          - pt
+          - pt-br
+          - ro
+          - ru
+          - sk
+          - sl
+          - sq
+          - sr
+          - sr-latn
+          - sv
+          - sw
+          - ta
+          - te
+          - tg
+          - th
+          - tk
+          - tr
+          - tt
+          - udm
+          - uk
+          - ur
+          - uz
+          - vi
+          - zh-hans
+          - zh-hant
+      tags:
+      - api
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/vnd.oai.openapi:
+              schema:
+                type: object
+                additionalProperties: {}
+            application/yaml:
+              schema:
+                type: object
+                additionalProperties: {}
+            application/vnd.oai.openapi+json:
+              schema:
+                type: object
+                additionalProperties: {}
+            application/json:
+              schema:
+                type: object
+                additionalProperties: {}
+          description: ''
+  /api/suppliers/:
+    get:
+      operationId: api_suppliers_list
+      description: |-
+        This class describes the Supplier view set class it allows
+        us to perform, create, list, retrive and many other actions
+        related to Supplier
+      tags:
+      - api
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Supplier'
+          description: ''
+    post:
+      operationId: api_suppliers_create
+      description: |-
+        This class describes the Supplier view set class it allows
+        us to perform, create, list, retrive and many other actions
+        related to Supplier
+      tags:
+      - api
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Supplier'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Supplier'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Supplier'
+        required: true
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Supplier'
+          description: ''
+  /api/suppliers/{id}/:
+    get:
+      operationId: api_suppliers_retrieve
+      description: |-
+        This class describes the Supplier view set class it allows
+        us to perform, create, list, retrive and many other actions
+        related to Supplier
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: A unique integer value identifying this supplier.
+        required: true
+      tags:
+      - api
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Supplier'
+          description: ''
+    put:
+      operationId: api_suppliers_update
+      description: |-
+        This class describes the Supplier view set class it allows
+        us to perform, create, list, retrive and many other actions
+        related to Supplier
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: A unique integer value identifying this supplier.
+        required: true
+      tags:
+      - api
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Supplier'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Supplier'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Supplier'
+        required: true
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Supplier'
+          description: ''
+    patch:
+      operationId: api_suppliers_partial_update
+      description: |-
+        This class describes the Supplier view set class it allows
+        us to perform, create, list, retrive and many other actions
+        related to Supplier
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: A unique integer value identifying this supplier.
+        required: true
+      tags:
+      - api
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PatchedSupplier'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/PatchedSupplier'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/PatchedSupplier'
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Supplier'
+          description: ''
+    delete:
+      operationId: api_suppliers_destroy
+      description: |-
+        This class describes the Supplier view set class it allows
+        us to perform, create, list, retrive and many other actions
+        related to Supplier
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: A unique integer value identifying this supplier.
+        required: true
+      tags:
+      - api
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '204':
+          description: No response body
+components:
+  schemas:
+    Category:
+      type: object
+      description: |-
+        This class implements the category serializer which
+        automatically serializes instances of the customer it
+        uses HyperLinkedModelSerializer class that automatically identifies
+        the fields and sets up the validation
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        name:
+          type: string
+          maxLength: 40
+        description:
+          type: string
+          maxLength: 40
+      required:
+      - description
+      - id
+      - name
+    PatchedCategory:
+      type: object
+      description: |-
+        This class implements the category serializer which
+        automatically serializes instances of the customer it
+        uses HyperLinkedModelSerializer class that automatically identifies
+        the fields and sets up the validation
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        name:
+          type: string
+          maxLength: 40
+        description:
+          type: string
+          maxLength: 40
+    PatchedPrice:
+      type: object
+      description: |-
+        This class implements the price serializer which
+        automatically serializes instances of the customer it
+        uses HyperLinkedModelSerializer class that automatically identifies
+        the fields and sets up the validation
+      properties:
+        url:
+          type: string
+          format: uri
+          readOnly: true
+        stock:
+          type: integer
+          title: Stock Levels
+        price:
+          type: integer
+    PatchedProduct:
+      type: object
+      description: |-
+        This class implements the product serializer which
+        automatically serializes instances of the customer it
+        uses HyperLinkedModelSerializer class that automatically identifies
+        the fields and sets up the validation
+      properties:
+        name:
+          type: string
+          maxLength: 50
+        productImage:
+          type: string
+          format: uri
+          title: Product Image
+        serialNumber:
+          type: integer
+        description:
+          type: string
+          maxLength: 256
+        supplier:
+          type: integer
+        category:
+          type: integer
+        price:
+          type: integer
+    PatchedProfile:
+      type: object
+      description: |-
+        _summary_
+
+        Args:
+            serializers (_type_): _description_
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        userImage:
+          type: string
+          format: uri
+          title: Image
+        phoneNumber:
+          type: string
+          maxLength: 15
+        address:
+          type: string
+          maxLength: 30
+        role:
+          $ref: '#/components/schemas/RoleEnum'
+        user:
+          type: integer
+    PatchedSupplier:
+      type: object
+      description: |-
+        This class implements the supplier serializer which
+        automatically serializes instances of the Supplier it
+        uses HyperLinkedModelSerializer class that automatically identifies
+        the fields a nd sets up the validation
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        name:
+          type: string
+          maxLength: 40
+        email:
+          type: string
+          maxLength: 40
+        address:
+          type: string
+          maxLength: 12
+        phoneNumber:
+          type: string
+          maxLength: 15
+    Price:
+      type: object
+      description: |-
+        This class implements the price serializer which
+        automatically serializes instances of the customer it
+        uses HyperLinkedModelSerializer class that automatically identifies
+        the fields and sets up the validation
+      properties:
+        url:
+          type: string
+          format: uri
+          readOnly: true
+        stock:
+          type: integer
+          title: Stock Levels
+        price:
+          type: integer
+      required:
+      - price
+      - stock
+      - url
+    Product:
+      type: object
+      description: |-
+        This class implements the product serializer which
+        automatically serializes instances of the customer it
+        uses HyperLinkedModelSerializer class that automatically identifies
+        the fields and sets up the validation
+      properties:
+        name:
+          type: string
+          maxLength: 50
+        productImage:
+          type: string
+          format: uri
+          title: Product Image
+        serialNumber:
+          type: integer
+        description:
+          type: string
+          maxLength: 256
+        supplier:
+          type: integer
+        category:
+          type: integer
+        price:
+          type: integer
+      required:
+      - category
+      - description
+      - name
+      - price
+      - productImage
+      - supplier
+    Profile:
+      type: object
+      description: |-
+        _summary_
+
+        Args:
+            serializers (_type_): _description_
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        userImage:
+          type: string
+          format: uri
+          title: Image
+        phoneNumber:
+          type: string
+          maxLength: 15
+        address:
+          type: string
+          maxLength: 30
+        role:
+          $ref: '#/components/schemas/RoleEnum'
+        user:
+          type: integer
+      required:
+      - address
+      - id
+      - phoneNumber
+      - user
+      - userImage
+    RoleEnum:
+      enum:
+      - SUP
+      - CLNT
+      type: string
+      description: |-
+        * `SUP` - Supplier/Partner
+        * `CLNT` - Consumer/Customer
+    Supplier:
+      type: object
+      description: |-
+        This class implements the supplier serializer which
+        automatically serializes instances of the Supplier it
+        uses HyperLinkedModelSerializer class that automatically identifies
+        the fields a nd sets up the validation
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        name:
+          type: string
+          maxLength: 40
+        email:
+          type: string
+          maxLength: 40
+        address:
+          type: string
+          maxLength: 12
+        phoneNumber:
+          type: string
+          maxLength: 15
+      required:
+      - address
+      - email
+      - id
+      - name
+      - phoneNumber
+  securitySchemes:
+    basicAuth:
+      type: http
+      scheme: basic
+    cookieAuth:
+      type: apiKey
+      in: cookie
+      name: sessionid
