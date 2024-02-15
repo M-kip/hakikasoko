@@ -1,2 +1,6 @@
-django<4.2.7
+django
 pillow
+django-vite
+django-cors-headers
+djangorestframework
+drf-spectacular
