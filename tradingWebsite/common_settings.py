@@ -135,8 +135,8 @@ USE_TZ = True
 STATIC_URL = 'static/'
 STATIC_ROOT = '/var/django/projects/myapp/static/'
 DJANGO_VITE_DEV_MODE = DEBUG
-DJANGO_VITE_ASSETS_PATH = 'src/js'
-DJANGO_VITE_MANIFEST_PATH = 'webapp/static/webapp/dist/js'
+DJANGO_VITE_ASSETS_PATH = BASE_DIR / 'webapp/static/webapp/src/js'
+DJANGO_VITE_MANIFEST_PATH = 'dist/js'
 STATICFILES_DIRS = [
     DJANGO_VITE_ASSETS_PATH,
     DJANGO_VITE_MANIFEST_PATH,
