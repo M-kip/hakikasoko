@@ -133,7 +133,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
 STATIC_URL = 'static/'
-STATIC_ROOT = '/var/django/projects/hakikasoko/static'
+STATIC_ROOT = '/var/django/projects/hakikasoko/'
 DJANGO_VITE_DEV_MODE = DEBUG
 DJANGO_VITE_ASSETS_PATH = BASE_DIR / 'webapp/static/webapp/dist/js'
 
