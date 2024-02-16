@@ -140,8 +140,9 @@ DJANGO_VITE_ASSETS_PATH = BASE_DIR / 'webapp/static/webapp/dist/js'
 STATICFILES_DIRS = [
     DJANGO_VITE_ASSETS_PATH,
     BASE_DIR / 'static/',
-    BASE_DIR / 'webapp/static/webapp/src/js/assets/images',
-    BASE_DIR / 'webapp/static/webapp/src/js/assets',
+    BASE_DIR / 'webapp/static/webapp/src',
+    #BASE_DIR / 'webapp/static/webapp/src/js/assets/images',
+    #BASE_DIR / 'webapp/static/webapp/src/js/assets',
 ]
 MEDIA_URL = 'media/'
 MEDIA_ROOT = BASE_DIR / 'artifacts/webapp/media'
