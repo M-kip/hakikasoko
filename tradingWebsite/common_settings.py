@@ -153,5 +153,6 @@ MEDIA_ROOT = BASE_DIR / 'artifacts/webapp/media'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 CORS_ALLOWED_ORIGINS = [
     'http://localhost:3000',
+    'hakikasoko.com:3000'
 ]
 LOGIN_REDIRECT_URL = 'hakikasoko:Home-page'
