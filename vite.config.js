@@ -6,7 +6,7 @@ import { resolve } from "path";
 import { defineConfig } from "vite";
 
 export default defineConfig({
-    root: resolve('./webapp/static/webapp/src/'),
+    root: resolve('./webapp/static/webapp/src/js'),
     base: '/static/',
     mode: 'production',
     server: {

@@ -136,7 +136,11 @@ STATIC_URL = 'static/'
 STATIC_ROOT = BASE_DIR / 'staticAssets/'
 DJANGO_VITE_DEV_MODE = DEBUG
 DJANGO_VITE_ASSETS_PATH = BASE_DIR / 'webapp/static/webapp/src/js'
+<<<<<<< HEAD
 DJANGO_VITE_MANIFEST_PATH = BASE_DIR / 'webapp/static/webapp/dist/js'
+=======
+DJANGO_VITE_MANIFEST_PATH = 'dist/js'
+>>>>>>> dfe1fd1bc649aa465bbad079a732fde4eb87713a
 STATICFILES_DIRS = [
     DJANGO_VITE_ASSETS_PATH,
     DJANGO_VITE_MANIFEST_PATH,
