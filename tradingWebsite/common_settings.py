@@ -24,7 +24,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.getenv('DJANGO_SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'hakikasoko.com']
 
@@ -133,13 +133,14 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
 STATIC_URL = 'static/'
-STATIC_ROOT = '/var/django/projects/myapp/static/'
+STATIC_ROOT = BASE_DIR / 'staticAssets/'
 DJANGO_VITE_DEV_MODE = DEBUG
 DJANGO_VITE_ASSETS_PATH = BASE_DIR / 'webapp/static/webapp/src/js'
-DJANGO_VITE_MANIFEST_PATH = 'webapp/static/webapp/dist/js'
+DJANGO_VITE_MANIFEST_PATH = BASE_DIR / 'webapp/static/webapp/dist/js'
 STATICFILES_DIRS = [
     DJANGO_VITE_ASSETS_PATH,
     DJANGO_VITE_MANIFEST_PATH,
+    BASE_DIR / 'static/'
     BASE_DIR / 'webapp/static/webapp/src/js/assets/images',
     BASE_DIR / 'webapp/static/webapp/src/js/assets',
     BASE_DIR / 'webapp/static/webapp/src',
@@ -153,6 +154,6 @@ MEDIA_ROOT = BASE_DIR / 'artifacts/webapp/media'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 CORS_ALLOWED_ORIGINS = [
     'http://localhost:3000',
-    'hakikasoko.com:3000'
+    'http://hakikasoko.com:3000'
 ]
 LOGIN_REDIRECT_URL = 'hakikasoko:Home-page'

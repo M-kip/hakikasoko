@@ -8,7 +8,7 @@ import { defineConfig } from "vite";
 export default defineConfig({
     root: resolve('./webapp/static/webapp/src/'),
     base: '/static/',
-    mode: 'development',
+    mode: 'production',
     server: {
         host: 'localhost',
         port: 3000,
