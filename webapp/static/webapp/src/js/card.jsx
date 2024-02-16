@@ -63,8 +63,8 @@ function ICard(props){
                 <Stack>
                     <Container><Icon as={props.icon} boxSize={8} /></Container>
                     <Divider />
-                    <Heading size={'md'}>{props.head}</Heading>
-                    <Text fontSize={[12, 14, 16]}>{props.body}</Text>
+                    <Heading size={['sm', 'lg', 'xl']}>{props.head}</Heading>
+                    <Text fontSize={['sm', 'lg', 'lg']}>{props.body}</Text>
                 </Stack>
             </CardBody>
         </Card>
