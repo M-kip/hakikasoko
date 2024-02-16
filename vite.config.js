@@ -6,7 +6,7 @@ import { resolve } from "path";
 import { defineConfig } from "vite";
 
 export default defineConfig({
-    root: resolve('./webapp/static/webapp/src'),
+    root: resolve('./webapp/static/webapp/src/'),
     base: '/static/',
     mode: 'development',
     server: {
@@ -19,7 +19,7 @@ export default defineConfig({
         },
     },
     build: {
-        outDir: resolve('./static/webapp/dist/js'),
+        outDir: resolve('./webapp/static/webapp/dist/js'),
         emptyOutDir: true,
         assetsDir: '',
         manifest: true,
