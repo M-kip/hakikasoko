@@ -145,7 +145,7 @@ STATICFILES_DIRS = [
     #BASE_DIR / 'webapp/static/webapp/src/js/assets',
 ]
 MEDIA_URL = 'media/'
-MEDIA_ROOT = BASE_DIR / 'artifacts/media'
+MEDIA_ROOT = '/var/django/projects/hakikasoko/media/'
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
