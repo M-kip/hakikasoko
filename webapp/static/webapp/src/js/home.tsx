@@ -29,6 +29,7 @@ export default function Home(){
     return(
         <Container color={'BlackAlpha.900'}  maxW={1280} fontWeight='semibold' >
             <Jumbotron />
+            <MarketDescription />
             <ProductDescription />
             <Products />
             <SignupHero />
