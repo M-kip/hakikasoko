@@ -1,0 +1,7 @@
+[unit]
+description=Service file for Uwsgi application
+[service]
+type=notify
+ExecStart=/usr/local/bin/uwsgi_run.sh
+Restart=on-abnormal
+
