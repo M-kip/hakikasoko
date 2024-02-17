@@ -55,7 +55,7 @@ export const LandingImages = [
 export let Jumbo = {
     name: 'Jumbotron',
     description: "Are you a retailer looking for a seamless way to source products directly from wholesalers? Look no further – Hakikasoko is here to revolutionize your B2B buying experience!",
-    title: "Your Ultimate Online B2B Marketplace! ",
+    title: "Your Ultimate Virtual Online Marketplace! ",
     img: {
         url: 'static/Jumbotron.png',
     }
