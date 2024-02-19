@@ -141,8 +141,8 @@ STATICFILES_DIRS = [
     DJANGO_VITE_ASSETS_PATH,
     BASE_DIR / 'static/',
     BASE_DIR / 'webapp/static/webapp/src',
-    #BASE_DIR / 'webapp/static/webapp/src/js/assets/images',
-    #BASE_DIR / 'webapp/static/webapp/src/js/assets',
+    BASE_DIR / 'webapp/static/webapp/src/js/assets/images',
+    BASE_DIR / 'hakikaservices/static/hakikaservices',
 ]
 MEDIA_URL = 'media/'
 MEDIA_ROOT = '/var/django/projects/hakikasoko/media/'

@@ -9,4 +9,4 @@ if [[ $? != 0 ]]; then
 fi
 popd
 
-exec uwsgi --ini /etc/uwsgi/uwsgi_hakika.ini
+exec uwsgi  /etc/uwsgi/uwsgi_hakika.ini
