@@ -16,7 +16,6 @@
                 {% vite_asset 'js/index.jsx'%}
         <style>
             .header-section {
-                border-bottom-right-radius: 1em;
                 color: white;
                 background-color: gray;
                 display: flex;
@@ -148,7 +147,7 @@
                 <nav>
                     <a href="{% url 'hakikasoko:Home-page' %}">Home</a>
                     <a href="/products">Shop</a>
-                    <a href="{% url 'hakikaservices:services' %}">Hakika services</a>
+                    <a href="{% url 'hakikaservices:services' %}">Hakika Digital</a>
                 <span>
                     {% if request.user.is_authenticated %}
                         <i id="username">Hello {{ request.user.username | title }},</i>

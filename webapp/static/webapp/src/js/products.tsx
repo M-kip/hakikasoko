@@ -31,10 +31,10 @@ function Product(props) {
     }
     return(
         <Card position="relative"   as={ReactRouterLink} to={`products/product/${props.id}`} maxWidth={['100%','200px']}>
-            <CardBody display={['flex', 'block', 'block', 'block']} onMouseOver={handleMouseEnter} onMouseLeave={handleMouseLeave} minWidth={['100px', '200px']}>
+            <CardBody display={['flex', 'block', 'block', 'block']} minWidth={['100px', '200px']}>
                 <Image ref={myCardImgRef} src={props.productImage} maxWidth={['100px', '200px',]} maxHeight={['100px', '200px']}  width={'100%'} height={'100%'}/>
-                <Stack ref={myCardBodyRef} overflow={'wrap'} fontSize={[12, 14, 16]} display={'none'}>
-                    <Heading size={['sm', 'lg', 'xlg']} >{props.name}</Heading>
+                <Stack ref={myCardBodyRef} overflow={'wrap'} fontSize={[12, 14, 16]} >
+                    <Heading size={['sm', 'sm', 'sm']} >{props.name}</Heading>
                     <Text overflow={'wrap'}>
                         {props.description}
                     </Text>

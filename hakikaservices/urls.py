@@ -3,5 +3,5 @@ from .views import servicesView
 
 app_name = 'hakikaservices'
 urlpatterns = [
-    path("hakikaservices/", servicesView.as_view(), name="services"),
+    path("hakikadigital/", servicesView.as_view(), name="services"),
 ]
