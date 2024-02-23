@@ -9,7 +9,7 @@ function ProductShowCase(props){
         return(
             <Box bg='gray.200' width={'100%'}  p={4} mt={2} >
                 <Heading mt={8}>Discover your next business opportunity</Heading>
-                <Grid  templateRows='repeat(2, 1fr)' gridTemplateColumns='repeat(4, 1fr)' mt={4} width={'100%'} gap={2} justifyContent={'center'} h={800}>
+                <Grid  templateRows='repeat(2, 1fr)' gridTemplateColumns='repeat(4, 1fr)' mt={4} width={'100%'} gap={2} justifyContent={'center'}>
                     <GridItem bg={'white'}  rowSpan={2} colSpan={1} >
                         <Flex mt={2} p={2} alignItems={'center'}>
                             <Heading size={'sm'}>Top Selling</Heading>
