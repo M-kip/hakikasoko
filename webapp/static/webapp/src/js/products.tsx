@@ -30,7 +30,7 @@ function Product(props) {
     }
     return(
         <Card position="relative"   as={ReactRouterLink} to={`products/product/${props.id}`} maxWidth={['150px','200px']}  height={'100%'}>
-            <CardBody display={'block'} minWidth={['100%', '200px']}>
+            <CardBody  minWidth={['100%', '200px']}>
                 <Image ref={myCardImgRef} src={props.productImage} maxWidth={['100%', '200px',]} maxHeight={['200px', '200px']}  width={'100%'} />
                 <Stack ref={myCardBodyRef} overflow={'wrap'} fontSize={[12, 14, 16]} >
                     <Heading size={['sm', 'sm', 'sm']} >{props.name}</Heading>
@@ -65,7 +65,7 @@ function Product2(props) {
     }
     return(
         <Card position="relative"   as={ReactRouterLink} to={`product/${props.id}`} maxWidth={['150px','200px']}  height={'100%'}>
-            <CardBody display={'block'} minWidth={['100%', '200px']}>
+            <CardBody minWidth={['100%', '200px']}>
                 <Image ref={myCardImgRef} src={props.productImage} maxWidth={['100%', '200px',]} maxHeight={['200px', '200px']}  width={'100%'} />
                 <Stack ref={myCardBodyRef} overflow={'wrap'} fontSize={[12, 14, 16]} >
                     <Heading size={['sm', 'sm', 'sm']} >{props.name}</Heading>
