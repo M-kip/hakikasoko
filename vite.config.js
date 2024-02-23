@@ -29,7 +29,6 @@ export default defineConfig({
             },
             output: {
                 chunkFileNames: undefined,
-                manualChunks: ['webapp']
             },
         },
     },
