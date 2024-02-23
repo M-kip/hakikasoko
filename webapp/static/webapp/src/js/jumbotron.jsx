@@ -22,8 +22,8 @@ function Jumbotron() {
                 <Heading mt={'2em'}>{ Jumbo.title}</Heading>
                 <Text>{Jumbo.description}</Text>
                 <HStack marginX={'auto'} p={4}>
-                    <Link bg='blue'p={4} cursor={'pointer'} href='products/'>Shop with us</Link>
-                    <Link bg='blue'p={4} cursor={'pointer'} href='accounts/signup'>Create Virtual Shop</Link>
+                    <Link bg='blue'p={[2, 4]} cursor={'pointer'} size={['sm', 'lg', 'xlg']} href='products/'>Shop with us</Link>
+                    <Link bg='blue'p={[2, 4]} cursor={'pointer'} href='accounts/signup'>Create Virtual Shop</Link>
                 </HStack>
             </Stack>
         </Box>

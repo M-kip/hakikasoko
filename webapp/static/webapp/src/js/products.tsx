@@ -29,9 +29,9 @@ function Product(props) {
         myCardBodyRef.current.style.display = 'none'
     }
     return(
-        <Card position="relative"   as={ReactRouterLink} to={`products/product/${props.id}`} maxWidth={['100%','200px']}  height={'100%'}>
-            <CardBody display={['block']} minWidth={['100px', '200px']}>
-                <Image ref={myCardImgRef} src={props.productImage} maxWidth={['100px', '200px',]} maxHeight={['200px', '200px']}  width={'100%'} />
+        <Card position="relative"   as={ReactRouterLink} to={`products/product/${props.id}`} maxWidth={['150px','200px']}  height={'100%'}>
+            <CardBody display={['block']} minWidth={['100%', '200px']}>
+                <Image ref={myCardImgRef} src={props.productImage} maxWidth={['100%', '200px',]} maxHeight={['200px', '200px']}  width={'100%'} />
                 <Stack ref={myCardBodyRef} overflow={'wrap'} fontSize={[12, 14, 16]} >
                     <Heading size={['sm', 'sm', 'sm']} >{props.name}</Heading>
                     <Text overflow={'wrap'}>
@@ -64,9 +64,9 @@ function Product2(props) {
         myCardBodyRef.current.style.display = 'none'
     }
     return(
-        <Card position="relative"   as={ReactRouterLink} to={`product/${props.id}`} maxWidth={['100%','200px']}  height={'100%'}>
-            <CardBody display={['block']} minWidth={['100px', '200px']}>
-                <Image ref={myCardImgRef} src={props.productImage} maxWidth={['100px', '200px',]} maxHeight={['200px', '200px']}  width={'100%'} />
+        <Card position="relative"   as={ReactRouterLink} to={`product/${props.id}`} maxWidth={['150px','200px']}  height={'100%'}>
+            <CardBody display={['block']} minWidth={['100%', '200px']}>
+                <Image ref={myCardImgRef} src={props.productImage} maxWidth={['100%', '200px',]} maxHeight={['200px', '200px']}  width={'100%'} />
                 <Stack ref={myCardBodyRef} overflow={'wrap'} fontSize={[12, 14, 16]} >
                     <Heading size={['sm', 'sm', 'sm']} >{props.name}</Heading>
                     <Text overflow={'wrap'}>
@@ -104,7 +104,7 @@ export default function Products(props) {
     return (
         <Box>
                 <Heading size={'lg'} mt={'0.5em'} textDecoration={'Highlight'}>Hakika Soko Product Catalog:</Heading>
-                <Box width={'100%'} p={[4, 8]} gap={2} marginY={6} bg='green.200' display="flex" flexFlow={"row"} flexWrap={'wrap'}>
+                <Box width={'100%'} p={[4, 8]} gap={2} marginY={6} bg='green.200' display="flex" flexFlow={"row"} flexWrap={'wrap'} justifyContent={'center'}>
                     {data.map((result)=><Box key={result.id} ><Product {...result}  /></Box>)}
                 </Box>
         </Box>
@@ -129,7 +129,7 @@ function Products2(props) {
     return (
         <Box>
                 <Heading size={'lg'} mt={'0.5em'} textDecoration={'Highlight'}>Hakika Soko Product Catalog:</Heading>
-                <Box width={'100%'} p={[4, 8]} gap={2} marginY={6} bg='green.200' display="flex" flexFlow={"row"} flexWrap={'wrap'}>
+                <Box width={'100%'} p={[4, 8]} gap={2} marginY={6} bg='green.200' display="flex" flexFlow={"row"} flexWrap={'wrap'} justifyContent={'center'}>
                     {data.map((result)=><Box key={result.id} ><Product2 {...result}  /></Box>)}
                 </Box>
         </Box>
