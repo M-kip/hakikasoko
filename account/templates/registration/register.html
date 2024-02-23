@@ -1,22 +1,76 @@
 {% extends 'webapp/base.html' %}
 {% block content %}
 <!-- Login -->
-<div class="container" style="width: 100%; display: flex; align-items: center; justify-content: center;">
+<div class="container">
     <!-- The login application Logic -->
     <div class="login-form">
-        <h2 style="text-align: center; width: 100%; font-style: normal; font-family: 'Courier New', Courier, monospace; font-weight: 400; font-size: 32px; color: blue;">Hakika Soko</h2>
+        <h2 class="title">Hakika Soko</h2>
         {% if form.errors %}
         <p>Your username or password didn't match please try again.</p>
         {% endif %}
         <form method="post" action="{% url 'auth:signup' %}" enctype="multipart/form-data">
             {% csrf_token %}
-            <span style="display: block; margin-top: 1em; margin-bottom: 1em; border-bottom: 0.1em black solid; color: green; font-size: 24px; font-weight: 400; font-family: 'Courier New', Courier, monospace; background-color: blue; border-bottom-right-radius: 0.5em; color: white; padding: 0.5em;">UserInfo</span>
             {{ form.as_div }}
-            <span style="display: block; margin-top: 1em; margin-bottom: 1em; border-bottom: 0.1em black solid; color: green; font-size: 24px; font-weight: 400; font-family: 'Courier New', Courier, monospace; background-color: blue; border-bottom-right-radius: 0.5em; color: white; padding: 0.5em;">Profile Info</span>
             {{ profileForm.as_div }}
-            <input id="submit" type="submit" value="signup" style="border: 0.1em green solid; background-color: green; padding: 0.5em; font-size: 20px; margin-top: 1em;">
+            <div>
+                <input id="submit" type="submit" value="signup" >
+            </div>
         </form>
-        <p>Already have an account<a style="margin-left: 1em; border: 0.1em green solid; background-color: green; padding: 0.5em; font-size: 20px;" href="{% url 'auth:login' %}">login</a></p>
+        <p>Already have an account<a  href="{% url 'auth:login' %}">login</a></p>
     </div>
 </div>
+{% endblock %}
+{% block css%}
+<style>
+    .container {
+        width: fit-content;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 1em;
+        height: fit-content;
+    }
+    .login-form {
+        padding: 1em;
+    }
+    .title {
+        font-size: 32px;
+        font-weight: 800;
+        line-height: normal;
+        kerning: 0.5em;
+        color: green;
+        text-align: center;
+        text-transform: uppercase;
+    }
+    .container form {
+        padding: 0.1em;
+        display: flex;
+        flex-direction: column;
+        gap: 0.5em;
+    }
+    @media screen and (max-width: 700px) {
+        .container form {
+            flex-direction: column;
+        }
+    }
+    form #submit {
+        color: #fff;
+        background-color: blue;
+        border: 0.2em blue solid;
+        text-transform: uppercase;
+        cursor: pointer;
+        border-radius: 0.5em;
+        font-weight: 900;
+    }
+    .container p > a {
+        padding: 0.1em;
+        background-color: blue;
+        border: 0.1em blue solid;
+        color: #fff;
+        font-weight: 900;
+        font-style: italic;
+        border-radius: 0.5em;
+        margin-left: 0.1em;
+        text-decoration: none;
+    }
+</style>
 {% endblock %}

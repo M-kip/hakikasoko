@@ -10,10 +10,6 @@
         <link rel="icon" type="image/x-icon" href="{% static 'images/HakikaDigital blk.png' %}">
         <title>{% block title %}{% endblock %}</title>
         <style>
-            header {
-                padding-left: 0.1em;
-                padding-right: 0.1em;
-            }
             .header-section {
                 color: white;
                 background-color: gray;
@@ -23,15 +19,11 @@
                 width: 100%;
                 margin-bottom: 0.5em;
                 padding: 0.2em;
+                position: relative;
+                z-index: 2;
             }
             .header-section nav {
-                width: 90%;
-            }
-            @media screen and (max-width: 600px) {
-                .header-section nav a {
-                    display: none;
-                }
-                
+                width: 100%;
             }
             .header-section nav span {
                 display: inline-flex;
@@ -39,13 +31,13 @@
                 float: right;
             }
             #menuClose {
-                padding: 0.2em;
+                padding: 0.5em;
                 margin-left: 0.3em;
                 margin-right: 0.3m;
                 background-color: green;
                 border: 0.1em green solid;
-                float: right;
                 font-size: 24px;
+                display: none;
             }
            .header-section nav a {
                 background-color: blue;
@@ -66,6 +58,43 @@
             nav a:hover {
                 background-color: green;
                 transition-delay: 0001ms;
+            }
+            @media screen and (max-width: 750px) {
+                .header-section {
+                    width: 100%;
+                    justify-content: space-between;
+                }
+                .header-section nav {
+                  position: absolute;
+                  top: 100%;
+                  left: 0%;
+                  display: none;
+                  background-color: green;
+                  padding: 0.5em;
+                  width: 100%;
+                }
+                .header-section nav a {
+                    display: block;
+                    margin-bottom: 0.2em;
+                }
+                #menuClose {
+                    display: block;
+                    float: right;
+                }
+                nav span {
+                    display: flex;
+                    flex-direction: column;
+                    width: 100%;
+                }
+                nav span a {
+                    width: 100%;
+                }
+                
+            }
+            .header-section nav span {
+                display: inline-flex;
+                align-items: center;
+                float: right;
             }
             .profile-section h2 {
                 font-size: 20px;
@@ -141,27 +170,25 @@
         {% endblock %}
     </head>
     <body>
-        <header>
             <div class="header-section">
                 <img src="{% static 'images/HakikaDigital blk.png' %}" width="120px" height="100px">
-                <nav>
-                    <a href="{% url 'hakikasoko:Home-page' %}">Home</a>
-                    <a href="/products">Shop</a>
-                    <a href="{% url 'hakikaservices:services' %}">Hakika Digital</a>
+                <nav id="navBar" class="topNav">
+                    <a href="{% url 'hakikasoko:Home-page' %}"><i class="fa-solid fa-house"></i> Home</a>
+                    <a href="{% url 'hakikasoko:Home-page-with-path' 'products' %}"><i class="fa-solid fa-shop"></i> Shop</a>
+                    <a href="{% url 'hakikaservices:services' %}"><i class="fa-solid fa-camera-retro"></i> Hakika Digital</a>
                 <span>
                     {% if request.user.is_authenticated %}
                         <i id="username">Hello {{ request.user.username | title }},</i>
-                        <a href="{% url 'auth:profile' request.user.profile.id %}">Profile</a>
-                        <a href="{% url 'auth:logout' %}">logout</a>
+                        <a href="{% url 'auth:profile' request.user.profile.id %}"> <i class="fa-solid fa-user"></i> Profile</a>
+                        <a href="{% url 'auth:logout' %}"> <i class="fa-solid fa-left-long"></i>logout</a>
                     {% else %}
-                        <a href="{% url 'auth:login' %}">login</a>
-                        <a href="{% url 'auth:signup' %}">create account</a>
+                        <a href="{% url 'auth:login' %}"> <i class="fa-solid fa-right-from-bracket"></i> login</a>
+                        <a href="{% url 'auth:signup' %}"><i class="fa-solid fa-person-shelter"></i> create account</a>
                     {% endif %}
                 </span>
                 </nav>
-                <button id="menuClose">Close</button>
+                <a id="menuClose" onclick="openMenu()"><i class="fa-solid fa-bars fa-lg"></i></a>
             </div>
-        </header>
         {% block content %}
         {% endblock %}
         {% block app %}
@@ -207,7 +234,18 @@
                 </nav>
             </div>
         </footer>
+        <script>
+            function openMenu() {
+                let element = document.getElementById('navBar')
+                if (element.style.display == 'block') {
+                    element.style.display = 'none';
+                } else {
+                    element.style.display = 'block'
+                }
+            }
+        </script>
         {% block addScript %}
         {% endblock %}
+        <script src="https://kit.fontawesome.com/324063173c.js" crossorigin="anonymous"></script>
     </body>
 </html>

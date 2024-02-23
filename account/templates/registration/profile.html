@@ -55,7 +55,7 @@
         </p>
     {% endif %}
 </div>
-{%if request.user.profile.role == "SUPPLIER" %}
+{% if request.user.profile.role == "SUPPLIER" %}
 <section class="addProducts">
     <h2 class="heading">Add Products to your catalog <button onclick="addProduct()">add</button></h2>
     <div id="addProductContainer">
@@ -70,14 +70,16 @@
     <h3>Your Products Catalog:</h3>
     <div class="productsListContainer">
         {% for product in Products %}
-        <div class="card">
-            <div class="image-container">
-                <img src={{ product.productImage.url }} alt="product image" width="100%" height="100%">
+        <a href="{% url 'hakikasoko:Home-page-with-path' 'products' %}">
+            <div class="card">
+                <div class="image-container">
+                    <img src={{ product.productImage.url }} alt="product image" width="100%" height="100%">
+                </div>
+                <div>
+                    <p>{{ product.name }}</p>
+                </div>
             </div>
-            <div>
-                <p>{{ product.name }}</p>
-            </div>
-        </div>
+        </a>
         {% endfor %}
     </div>
 </section>

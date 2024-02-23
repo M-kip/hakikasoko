@@ -26,7 +26,7 @@ export const LandingImages = [
         name: 'Retailers',
         url: 'static/retailer.jpg',
         alt: 'Retailer',
-        description: 'Are you a retailer looking for a seamless way to source products directly from wholesalers? Look no further – Hakikasoko is here to revolutionize your B2B buying experience!',
+        description: 'Are you a retailer/consumer looking for a seamless way to source products and services directly from wholesalers/manufactures and services providers ? Look no further – Hakikasoko is here to revolutionize your e-commerce experience!',
     },
     {
         name: 'B2B',
@@ -54,7 +54,7 @@ export const LandingImages = [
 
 export let Jumbo = {
     name: 'Jumbotron',
-    description: "Are you a retailer looking for a seamless way to source products directly from wholesalers? Look no further – Hakikasoko is here to revolutionize your B2B buying experience!",
+    description: 'Are you a retailer/consumer looking for a seamless way to source products and services directly from wholesalers/manufactures and services providers ? Look no further – Hakikasoko is here to revolutionize your e-commerce experience!',
     title: "Your Ultimate Virtual Online Marketplace! ",
     img: {
         url: 'static/Jumbotron.png',

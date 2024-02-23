@@ -9,7 +9,7 @@ import { loader as productsLoader } from './products'
 import { loader as productLoader } from './slideshow'
 import ErrorPage from './errorPage'
 import { ProductDetail } from './productPage'
-import Product from './products';
+import {Products2 } from './products'
 import Layout from './main'
 
 const queryClient = new QueryClient()
@@ -28,7 +28,7 @@ const router = createBrowserRouter([
         children: [
             {
                 index: true,
-                element: <Product />,
+                element: <Products2 />,
             },
             {
                 path: "product/:productId",

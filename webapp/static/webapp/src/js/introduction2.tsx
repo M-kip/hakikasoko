@@ -3,7 +3,7 @@ import { HStack, Heading, Stack, Text, Box, Badge, Flex } from '@chakra-ui/react
 
 function ProductDescription(props){
     return(
-        <Flex w={'100%'} p={4} mt={4} bg='gray.100'  display={['column', 'row']} >
+        <Flex w={'100%'}  mt={4} bg='gray.100'  display={['column', 'row']} p={[4, 12]}>
             <Flex display={["column", "row"]}>
                 <Box>
                     <Heading size={['sm', 'lg', 'xl']}>Anywhere, Anytime Access:</Heading>

@@ -27,6 +27,10 @@ export default defineConfig({
             input: {
                 index: resolve('./webapp/static/webapp/src/js/index.jsx'),
             },
+            output: {
+                chunkFileNames: undefined,
+                manualChunks: ['webapp']
+            },
         },
     },
 });
