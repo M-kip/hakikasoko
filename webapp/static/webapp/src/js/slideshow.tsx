@@ -19,7 +19,7 @@ export const loader =  (queryClient: QueryClient) =>
                         }
 function SlideShow() {
     const [index, setIndex] = React.useState(0);
-    const { data, error, isLoading} = useApiProductsRetrieve({ pathParams: {id: 2 }})
+    const { data, error, isLoading} = useApiProductsRetrieve({ pathParams: {id: 1 }})
 
     function handleClick(e){
         if (index < myImages.length - 1){

@@ -28,12 +28,12 @@ const router = createBrowserRouter([
             {
                 index: true,
                 element: <Products2 />,
-                loader: productsLoader(queryClient),
+                //loader: productsLoader(queryClient),
             },
             {
                 path: "product/:productId",
                 element: <ProductDetail />,
-                loader: productLoader(queryClient),
+                //loader: productLoader(queryClient),
             },
         ],
     }
