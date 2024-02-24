@@ -16,14 +16,14 @@ function Jumbotron() {
         gsap.fromTo(jumboRef.current, {duration: 3, scale: 0.5, opacity: 0}, {duration: 3, scale: 1.0, ease: Power0, opacity: 1})
     },[])
     return(
-        <Box ref={jumboRef} textAlign={'center'} backgroundImage={Jumbo.img.url} backgroundPosition={'center'} fontSize={18}
+        <Box ref={jumboRef} textAlign={'center'} backgroundImage={Jumbo.img.url} backgroundPosition={'center'}
          w={'100%'}  position={'relative'} backgroundSize={'cover'} color={'white'}>
             <Stack p={4} background='blackAlpha.500' w={'100%'} h={'100%'} >
                 <Heading mt={'2em'}>{ Jumbo.title}</Heading>
                 <Text>{Jumbo.description}</Text>
                 <HStack marginX={'auto'} p={4}>
                     <Link bg='blue'p={[2, 4]} cursor={'pointer'} size={['sm', 'lg', 'xlg']} href='products/'>Shop with us</Link>
-                    <Link bg='blue'p={[2, 4]} cursor={'pointer'} href='accounts/signup'>Create Virtual Shop</Link>
+                    <Link bg='blue'p={[2, 4]} cursor={'pointer'} size={['sm', 'lg', 'xlg']} href='accounts/signup'>Create Virtual Shop</Link>
                 </HStack>
             </Stack>
         </Box>

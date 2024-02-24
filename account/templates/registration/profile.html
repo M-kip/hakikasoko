@@ -90,10 +90,10 @@
     function addProduct(e)
     {   
         let el = document.getElementById('addProductContainer')
-        if (el.style.display == 'none'){
-            el.style.display = 'block'
+        if (el.style.display == 'block'){
+            el.style.display = 'none'
         }else{
-        el.style.display = 'none'
+        el.style.display = 'block'
         }
     }
 </script>
@@ -109,12 +109,16 @@
         width: max-content;
         margin-left: 0.2em;
         margin-right: 0.2em;
+        max-width: 200px;
     }
     .productsListContainer .card .image-container {
         max-width: 200px;
         max-height: 200px;
     }
     @media screen and (max-width: 600px) {
+        .productsListContainer .card {
+            max-width: 100px;
+        }
         .productsListContainer .card .image-container {
             max-width: 100px;
             max-height: 100px;

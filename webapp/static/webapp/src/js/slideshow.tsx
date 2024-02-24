@@ -19,7 +19,7 @@ export const loader =  (queryClient: QueryClient) =>
                         }
 function SlideShow() {
     const [index, setIndex] = React.useState(0);
-    const { data, error, isLoading} = useApiProductsRetrieve({ pathParams: {id: 1}})
+    const { data, error, isLoading} = useApiProductsRetrieve({ pathParams: {id: 2 }})
 
     function handleClick(e){
         if (index < myImages.length - 1){
@@ -42,28 +42,29 @@ function SlideShow() {
         );
     }
     return(
-        <Box w={["100%", "60%"]} position={'relative'} >
+        <Box position={'relative'} display={'flex'} flexDirection={'column'} bg={'white'} p={[2,4]} textAlign={'center'}>
             <Text>{index + 1} of {myImages.length }</Text>
-            <Image
-                src={data.productImage} mt={4}
-                alt={data.alt}/>
+            <Image src={data.productImage} mt={4} alt={data.alt}/>
             <ArrowLeftIcon boxSize={6} onClick={handleClick} pos={'absolute'} top={'50%'}/>
-            <ArrowRightIcon boxSize={6} onClick={handleClick} pos={'absolute'} top={'50%'} right={'2%'}/>
-            <Text textAlign={'center'}>{data.name}</Text>
-            <Grid gridTemplateColumns={'auto auto auto auto'} mt={2}>
+            <ArrowRightIcon boxSize={6} onClick={handleClick} pos={'absolute'} top={'50%'} right={[2,4]}/>
+            <Grid gridTemplateColumns={['repeat(4, 1fr)']} mt={2}>
                 <GridItem onClick={handleClick} cursor={'pointer'}>
-                    <Image src={data.productImage} width={'100%'}></Image>
+                    <Image src={data.productImage} ></Image>
                 </GridItem>
                 <GridItem onClick={handleClick} cursor={'pointer'}>
-                    <Image src={data.productImage1} width={'100%'}></Image>
+                    <Image src={data.productImage1} ></Image>
                 </GridItem>
                 <GridItem onClick={handleClick} cursor={'pointer'}>
-                    <Image src={data.productImage2} width={'100%'}></Image>
+                    <Image src={data.productImage2}></Image>
                 </GridItem>
                 <GridItem onClick={handleClick} cursor={'pointer'}>
-                    <Image src={data.productImage3} width={'100%'}></Image>
+                    <Image src={data.productImage3}></Image>
                 </GridItem>
             </Grid>
+            <Box width={'fit-content'}>
+                <Text textTransform={'uppercase'} borderRadius={2} p={2} fontSize={'22px'} fontWeight={700} textAlign={'center'}>{ data.name }</Text>
+                <Text>{ data?.description }</Text>
+            </Box>
         </Box>
     );
 }

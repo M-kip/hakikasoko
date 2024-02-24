@@ -6,7 +6,7 @@ import { intro } from './data';
 function MarketDescription(){
     const items = intro.map((obj)=><ICard head={obj.head} body={obj.body} icon={obj.icon} key={obj.id} />)
     return(
-        <Flex flexWrap={['wrap', 'nowrap']} w={'100%'} p={[4, 8]} gap={[2, 4]} mt={[2, 4]} bg='green.400' direction={['column', 'column', 'row']}>
+        <Flex flexWrap={['wrap', 'nowrap']} w={'100%'} p={[4, 8]} gap={[2, 4]} mt={[2, 4]} bg='green.400' direction={['column', 'column', 'column', 'row']}>
             {items}
         </Flex>
     ) ;

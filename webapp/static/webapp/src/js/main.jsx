@@ -7,7 +7,7 @@ import { JumbotronProducts } from './Jumbotron';
 export default function Layout() {
     const navigate = useNavigate()
     return(
-        <Box width={'100%'}>
+        <Box width={'100%'} padding={[2, 4]} >
             <Box display={'flex'} width={'100%'} flexDirection={'column'}>
                 <Box >
                     <Button margin={'1em'} p={'1em'}  size={'sm'} colorScheme='green' onClick={(e)=>{e.preventDefault(), navigate(-1)}}>Back</Button>
