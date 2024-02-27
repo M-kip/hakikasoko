@@ -86,7 +86,7 @@ export default function Products(props) {
     if(isLoading){
         return(
             <Container>
-                <Stack><Spinner size={'sm'} /></Stack>
+                <Spinner size={['sm', 'sm', 'lg', 'xlg']} />
             </Container>
         );
     }
